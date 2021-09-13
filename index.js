@@ -14,15 +14,24 @@ nothing.addEventListener('keyup', counter);
 debounce.addEventListener('keyup', Dhandler);
 throttle.addEventListener('keyup', Thandler);
 
+
 function counter() {
-  console.log('inside counter');
+  console.log('inside normal counter');
+
+  console.log(nothing, nothing.value);
+  calc[0].innerHTML = nothing.value;
+}
+
+
+function counterD() {
+  console.log('inside Debounce counter');
 
   console.log(debounce, debounce.value);
   calc[1].innerHTML = debounce.value;
 }
 
 function counterT() {
-  console.log('inside counter');
+  console.log('inside Throttle counter');
 
   console.log(throttle, throttle.value);
   calc[2].innerHTML = throttle.value;
@@ -35,7 +44,7 @@ function Dhandler() {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(callback, time);
   }
-  debounceFunc(counter, 500);
+  debounceFunc(counterD, 5000);
 }
 //Throttling
 let throttleTimer;
@@ -49,5 +58,5 @@ function Thandler() {
       throttleTimer = false;
     }, time);
   }
-  throttleFunc(counterT, 500);
+  throttleFunc(counterT, 5000);
 }
