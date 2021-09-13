@@ -1,0 +1,16 @@
+h1,
+h2 {
+  font-family: Lato;
+}
+
+.nothing,
+.debouncing,
+.throttling {
+  border: 2px solid black;
+  margin: 10px auto;
+  padding: 2px;
+}
+
+.nothingCount {
+  border: 1px dashed rgb(61, 47, 255);
+}
